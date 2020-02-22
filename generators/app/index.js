@@ -5,7 +5,7 @@ const yosay = require('yosay');
 const glob = require('glob');
 const { resolve } = require('path');
 const remote = require('yeoman-remote');
-const yoHelper = require('yeoman-generator-helper');
+const yoHelper = require('@feizheng/yeoman-generator-helper');
 const replace = require('replace-in-file');
 
 module.exports = class extends Generator {
@@ -13,7 +13,7 @@ module.exports = class extends Generator {
     this.log(
       yosay(
         `Welcome to the stunning ${chalk.red(
-          'boilerplate-nodejs-es5'
+          'boilerplate-node-package'
         )} generator!`
       )
     );
@@ -45,7 +45,7 @@ module.exports = class extends Generator {
     const done = this.async();
     remote(
       'afeiship',
-      'boilerplate-nodejs-es5',
+      'boilerplate-node-package',
       function(err, cachePath) {
         // copy files:
         this.fs.copy(
@@ -64,8 +64,8 @@ module.exports = class extends Generator {
     replace.sync({
       files,
       from: [
-        /boilerplate-nodejs-es5-description/g,
-        /boilerplate-nodejs-es5/g,
+        /boilerplate-node-package-description/g,
+        /boilerplate-node-package/g,
       ],
       to: [description, project_name]
     });
