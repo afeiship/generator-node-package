@@ -5,6 +5,7 @@
 ```shell
 git clone git@github.com:afeiship/generator-node-package.git
 cd generator-node-package
+npm install
 npm link
 ```
 
