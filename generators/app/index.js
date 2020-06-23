@@ -8,6 +8,12 @@ const remote = require('yeoman-remote');
 const yoHelper = require('@feizheng/yeoman-generator-helper');
 const replace = require('replace-in-file');
 
+require('@afeiship/next-npm-registries');
+
+const NPM_CHOICES = ['npm', 'github', 'alo7'].map(item => {
+  return { name: item, value: nx.npmRegistries(item) };
+});
+
 module.exports = class extends Generator {
   prompting() {
     this.log(
@@ -19,6 +25,18 @@ module.exports = class extends Generator {
     );
 
     const prompts = [
+      {
+        type: "input",
+        name: "scope",
+        message: "Your scope (eg: `babel` )?",
+        default: 'feizheng'
+      },
+      {
+        type: 'list',
+        name: 'registry',
+        message: 'Your registry',
+        choices: NPM_CHOICES
+      },
       {
         type: 'input',
         name: 'project_name',
@@ -48,9 +66,10 @@ module.exports = class extends Generator {
       'boilerplate-node-package',
       function(err, cachePath) {
         // copy files:
-        this.fs.copy(
+        this.fs.copyTpl(
           glob.sync(resolve(cachePath, '{**,.*}')),
-          this.destinationPath()
+          this.destinationPath(),
+          this.props
         );
         done();
       }.bind(this)
