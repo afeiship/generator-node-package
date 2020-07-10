@@ -51,11 +51,11 @@ module.exports = class extends Generator {
     ];
 
     return this.prompt(prompts).then(
-      function(props) {
+      (props) => {
         // To access props later use this.props.someAnswer;
         this.props = props;
         yoHelper.rewriteProps(props);
-      }.bind(this)
+      }
     );
   }
 
@@ -64,7 +64,7 @@ module.exports = class extends Generator {
     remote(
       'afeiship',
       'boilerplate-node-package',
-      function(err, cachePath) {
+      (err, cachePath) => {
         // copy files:
         this.fs.copyTpl(
           glob.sync(resolve(cachePath, '{**,.*}')),
@@ -72,13 +72,15 @@ module.exports = class extends Generator {
           this.props
         );
         done();
-      }.bind(this)
+      }
     );
   }
 
   end() {
     const { project_name, description } = this.props;
-    const files = glob.sync(resolve(this.destinationPath(), '{**,.*}'));
+    const files = glob.sync(
+      resolve(this.destinationPath(), '{**,.*}')
+    );
 
     replace.sync({
       files,

@@ -1,5 +1,5 @@
 {
-  "name": "generator-node-package",
+  "name": "@feizheng/generator-node-package",
   "version": "1.0.0",
   "description": "Yeoman generator for nodejs-es5/6.",
   "homepage": "https://github.com/afeiship/generator-node-package",
@@ -19,19 +19,19 @@
     "yeoman-generator"
   ],
   "devDependencies": {
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.5",
     "yeoman-assert": "^3.1.1",
-    "yeoman-test": "^2.1.0"
+    "yeoman-test": "^2.6.0"
   },
   "engines": {
     "npm": ">= 4.0.0"
   },
   "dependencies": {
     "@afeiship/next-npm-registries": "^1.0.2",
-    "@feizheng/yeoman-generator-helper": "^1.0.6",
-    "chalk": "^3.0.0",
-    "replace-in-file": "^5.0.2",
-    "yeoman-generator": "^4.5.0",
+    "@feizheng/yeoman-generator-helper": "^1.0.10",
+    "chalk": "^4.1.0",
+    "replace-in-file": "^6.1.0",
+    "yeoman-generator": "^4.11.0",
     "yeoman-remote": "^1.0.1",
     "yosay": "^2.0.2"
   },
