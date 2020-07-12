@@ -87,8 +87,9 @@ module.exports = class extends Generator {
       from: [
         /boilerplate-node-package-description/g,
         /boilerplate-node-package/g,
+        /boilerplateNodePackage/g
       ],
-      to: [description, project_name]
+      to: [description, project_name, projectName]
     });
   }
 };
