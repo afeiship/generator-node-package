@@ -77,7 +77,7 @@ module.exports = class extends Generator {
   }
 
   end() {
-    const { project_name, description } = this.props;
+    const { project_name, description, projectName } = this.props;
     const files = glob.sync(
       resolve(this.destinationPath(), '{**,.*}')
     );
