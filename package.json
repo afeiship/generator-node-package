@@ -1,5 +1,5 @@
 {
-  "name": "@feizheng/generator-node-package",
+  "name": "@jswork/generator-node-package",
   "version": "1.0.0",
   "description": "Yeoman generator for nodejs-es5/6.",
   "homepage": "https://github.com/afeiship/generator-node-package",

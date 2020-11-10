@@ -11,5 +11,5 @@ npm link
 
 ## usage
 ```shell
-yo node-package
+yo @jswork/node-package
 ```
